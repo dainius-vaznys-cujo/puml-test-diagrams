@@ -1,0 +1,25 @@
+@startuml
+
+    component "Agent" as ag
+    component "URL Checker Service" as ucs
+    component "Content Processor" as cp
+    note left
+            Extract content features from website
+                - image metadata
+                - content length
+                - content type
+                - ...
+    end note
+    component "NGINX Proxy" as proxy
+    component "Kafka" as kafka
+    database "DB" as db
+
+    ag -down-> proxy
+    proxy -down-> ucs
+    ucs <-down-> kafka
+    kafka <--> cp
+    ucs -> db
+
+
+
+@enduml
