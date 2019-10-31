@@ -1,6 +1,6 @@
 @startuml
 
-    component "Agent 1" as ag
+    component "Agent U" as ag
     component "URL Checker Service" as ucs
     component "Content Processor" as cp
     note left
